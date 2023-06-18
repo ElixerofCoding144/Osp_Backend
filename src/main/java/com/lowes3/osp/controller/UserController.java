@@ -6,34 +6,34 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@CrossOrigin(origins = "https://lowesospfrontendws-production.up.railway.app/")
-//@CrossOrigin(origins = "http://localhost:3000")
+// @CrossOrigin(origins = "https://lowesospfrontendws-production.up.railway.app/")
+@CrossOrigin(origins = "http://localhost:3000")
 public class UserController {
     @Autowired
     private UserService UserService;
 
-    //http://localhost:8080/saveUser
+    // http://localhost:8080/saveUser
     @PostMapping("/saveUser")
     public User saveUser(@RequestBody User User) {
         User User1 = UserService.saveUser(User);
         return User1;
     }
 
-    //http://localhost:8080/getUser/1
+    // http://localhost:8080/getUser/1
     @GetMapping("/getUser/{UserId}")
     public User getUserById(@PathVariable("UserId") Integer UserId) {
         return UserService.getUserById(UserId);
     }
 
-    //http://localhost:8080/updateUser
+    // http://localhost:8080/updateUser
     @PutMapping("/updateUser")
-    public User updateUser(@RequestBody User User){
+    public User updateUser(@RequestBody User User) {
         return UserService.updateUser(User);
     }
 
-    //http://localhost:8080/deleteUser/1
+    // http://localhost:8080/deleteUser/1
     @DeleteMapping("/deleteUser/{UserId}")
-    public String deleteUserByID(@PathVariable("UserId") Integer UserId){
+    public String deleteUserByID(@PathVariable("UserId") Integer UserId) {
         String checkIfDeleted = UserService.deleteUserById(UserId);
         return checkIfDeleted;
     }
