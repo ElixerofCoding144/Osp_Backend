@@ -10,9 +10,8 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-// @CrossOrigin(origins =
-// "https://lowesospfrontendws-production.up.railway.app/")
-@CrossOrigin(origins = "http://localhost:3000")
+@CrossOrigin(origins = "https://ospfrontend-production.up.railway.app/")
+// @CrossOrigin(origins = "http://localhost:3000")
 public class ResponseController {
     @Autowired
     private ResponseService responseService;

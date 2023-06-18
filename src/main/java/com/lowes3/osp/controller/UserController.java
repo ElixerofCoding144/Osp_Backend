@@ -6,9 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-// @CrossOrigin(origins =
-// "https://lowesospfrontendws-production.up.railway.app/")
-@CrossOrigin(origins = "http://localhost:3000")
+@CrossOrigin(origins = "https://ospfrontend-production.up.railway.app/")
+// @CrossOrigin(origins = "http://localhost:3000")
 public class UserController {
     @Autowired
     private UserService UserService;
