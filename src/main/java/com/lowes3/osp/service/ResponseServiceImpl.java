@@ -3,9 +3,12 @@ package com.lowes3.osp.service;
 import com.lowes3.osp.dao.ResponseRepository;
 
 import com.lowes3.osp.entity.Response;
+import com.lowes3.osp.entity.User;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -39,5 +42,11 @@ public class ResponseServiceImpl implements ResponseService{
             return "Deleted the response.";
         }
         else return "Could not find response by Id.";
+    }
+    
+    
+    @Override
+    public List<Response> getResponses() {
+        return (List<Response>) responseRepository.findAll();
     }
 }

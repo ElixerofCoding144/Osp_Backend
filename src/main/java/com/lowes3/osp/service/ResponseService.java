@@ -1,4 +1,6 @@
 package com.lowes3.osp.service;
+import java.util.List;
+
 import org.springframework.stereotype.Service;
 import com.lowes3.osp.entity.Response;
 
@@ -8,5 +10,6 @@ public interface ResponseService {
     public Response getResponseById(Integer responseId);
     public Response updateResponse(Response response);
     public String deleteResponseById(Integer responseId);
+    public List<Response> getResponses();
 }
 

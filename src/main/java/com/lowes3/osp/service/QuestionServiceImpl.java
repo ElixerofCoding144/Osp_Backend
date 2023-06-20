@@ -1,10 +1,14 @@
 package com.lowes3.osp.service;
 
 import com.lowes3.osp.dao.QuestionRepository;
+import com.lowes3.osp.dao.ResponseRepository;
 import com.lowes3.osp.entity.Question;
+import com.lowes3.osp.entity.Response;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -38,5 +42,10 @@ public class QuestionServiceImpl implements QuestionService {
             return "Deleted the question.";
         }
         else return "Could not find question by Id.";
+    }
+    
+    @Override
+    public List<Question> getQuestions() {
+        return (List<Question>) questionRepository.findAll();
     }
 }
