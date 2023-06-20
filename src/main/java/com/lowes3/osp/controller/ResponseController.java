@@ -3,6 +3,7 @@ package com.lowes3.osp.controller;
 import org.springframework.stereotype.Controller;
 
 import com.lowes3.osp.entity.Response;
+import com.lowes3.osp.entity.Survey;
 import com.lowes3.osp.service.ResponseService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -30,6 +31,12 @@ public class ResponseController {
     @GetMapping("/getResponse/{responseId}")
     public Response getResponseById(@PathVariable("responseId") Integer responseId) {
         return responseService.getResponseById(responseId);
+    }
+
+    // http://localhost:8080/getResponses
+    @GetMapping("/getResponses")
+    public List<Response> getResponses() {
+        return responseService.getResponses();
     }
 
     // http://localhost:8080/updateResponse

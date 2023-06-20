@@ -1,7 +1,11 @@
 package com.lowes3.osp.controller;
 
+import com.lowes3.osp.entity.Response;
 import com.lowes3.osp.entity.User;
 import com.lowes3.osp.service.UserService;
+
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -23,6 +27,12 @@ public class UserController {
     @GetMapping("/getUser/{UserId}")
     public User getUserById(@PathVariable("UserId") Integer UserId) {
         return UserService.getUserById(UserId);
+    }
+
+    // http://localhost:8080/getResponses
+    @GetMapping("/getUsers")
+    public List<User> getUsers() {
+        return UserService.getUsers();
     }
 
     // http://localhost:8080/updateUser

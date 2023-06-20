@@ -1,7 +1,11 @@
 package com.lowes3.osp.controller;
 
 import com.lowes3.osp.entity.Question;
+import com.lowes3.osp.entity.Response;
 import com.lowes3.osp.service.QuestionService;
+
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -29,6 +33,12 @@ public class QuestionController {
     @PutMapping("/updateQuestion")
     public Question updateQuestion(@RequestBody Question question) {
         return questionService.updateQuestion(question);
+    }
+
+    // http://localhost:8080/getQuestions
+    @GetMapping("/getQuestions")
+    public List<Question> getQuestions() {
+        return questionService.getQuestions();
     }
 
     // http://localhost:8080/deleteQuestion/1
